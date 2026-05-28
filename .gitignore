@@ -366,6 +366,9 @@ Temporary Items
 .build/gamedata
 .build/shared
 .build/modules
+.build/configs
+.build/locales
+.build/content
 /PoopCSSharp
 /CounterStrikeSharp-main
 /Stubs

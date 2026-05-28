@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Poop</AssemblyName>
+    <RootNamespace>Prefix.Poop</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.7" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
+    <PackageReference Include="MessagePipe" Version="1.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(PoopRoot)Poop.Shared\Poop.Shared.csproj" Private="false" />
+    <ProjectReference Include="$(PoopRoot)Poop.Database.Shared\Poop.Database.Shared.csproj" Private="false" />
+  </ItemGroup>
+
+  <!-- Copy .assets/* (locales, default configs) into .build/ so modsharp-deploy bundles them.
+       Mirrors RoundEndSounds layout: .assets/configs/<f>.json -> .build/configs/<f>.json,
+       .assets/locales/<f>.json -> .build/locales/<f>.json. -->
+  <Target Name="CopyAssets" AfterTargets="Build">
+    <PropertyGroup>
+      <AssetsDir>$(PoopRoot).assets\</AssetsDir>
+      <BuildDir>$(PoopRoot).build\</BuildDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <_AssetFiles Include="$(AssetsDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_AssetFiles)"
+          DestinationFiles="@(_AssetFiles -> '$(BuildDir)%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+</Project>

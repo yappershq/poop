@@ -1,0 +1,190 @@
+{
+  "common.cooldown": {
+    "en-US": "Please wait {0}s before using this command again.",
+    "zh-CN": "请等待 {0} 秒后再使用此命令。"
+  },
+  "poop.must_be_alive": {
+    "en-US": "You must be alive to use this command.",
+    "zh-CN": "你必须活着才能使用此命令。"
+  },
+  "poop.must_be_on_ground": {
+    "en-US": "{{red}}You must be on the ground to spawn poop!",
+    "zh-CN": "{{red}}你必须站在地面上才能拉便便！"
+  },
+  "poop.max_per_round": {
+    "en-US": "{{red}}Max poops per round limit reached!",
+    "zh-CN": "{{red}}已达到本轮最大便便数量限制！"
+  },
+  "poop.spawned_on_player": {
+    "en-US": "{{darkred}}{0}{{default}} pooped on {{blue}}{1}{{default}} with a {2} poop ({{green}}{3:F3}{{default}})!",
+    "zh-CN": "{{darkred}}{0}{{default}} 在 {{blue}}{1}{{default}} 身上拉了一坨 {2} 便便 ({{green}}{3:F3}{{default}})！"
+  },
+  "poop.spawned_self": {
+    "en-US": "You spawned a {0} poop ({{green}}{1:F3}{{default}}) at your position!",
+    "zh-CN": "你在自己的位置生成了一坨 {0} 便便 ({{green}}{1:F3}{{default}})！"
+  },
+  "poop.spawned_massive": {
+    "en-US": "{{gold}}WOW! {{darkred}}{0}{{default}} just dropped a {1} poop of size {{green}}{2:F3}{{default}}!",
+    "zh-CN": "{{gold}}哇！{{darkred}}{0}{{default}} 刚拉了一坨 {1} 的便便，大小为 {{green}}{2:F3}{{default}}！"
+  },
+  "leaderboard.victim_total_count": {
+    "en-US": "{{blue}}{0}{{default}} has been pooped on {{green}}{1}{{default}} times total!",
+    "zh-CN": "{{blue}}{0}{{default}} 总共被拉了 {{green}}{1}{{default}} 次！"
+  },
+  "leaderboard.no_poopers": {
+    "en-US": "{{red}}No poop records found!",
+    "zh-CN": "{{red}}未找到便便记录！"
+  },
+  "leaderboard.top_poopers_title": {
+    "en-US": "{{green}}=== Top {0} Poopers ===",
+    "zh-CN": "{{green}}=== 前 {0} 名拉便便玩家 ==="
+  },
+  "leaderboard.top_poopers_entry": {
+    "en-US": "{{green}}#{0}: {{darkred}}{1} {{default}}- {{green}}{2} {{default}}poops",
+    "zh-CN": "{{green}}#{0}：{{darkred}}{1} {{default}}- {{green}}{2} {{default}}坨便便"
+  },
+  "leaderboard.no_victims": {
+    "en-US": "{{red}}No poop victim records found!",
+    "zh-CN": "{{red}}未找到便便受害者记录！"
+  },
+  "leaderboard.top_victims_title": {
+    "en-US": "{{green}}=== Top {0} Poop Victims ===",
+    "zh-CN": "{{green}}=== 前 {0} 名被拉受害者 ==="
+  },
+  "leaderboard.top_victims_entry": {
+    "en-US": "{{green}}#{0}: {{blue}}{1} {{default}}- pooped on {{green}}{2} {{default}}times",
+    "zh-CN": "{{green}}#{0}: {{blue}}{1} {{default}}- 被拉了 {{green}}{2} {{default}}次"
+  },
+  "color.disabled": {
+    "en-US": "{{red}}Color preferences are currently disabled.",
+    "zh-CN": "{{red}}颜色偏好设置当前已禁用。"
+  },
+  "color.set_rainbow": {
+    "en-US": "{{green}}Your poop color has been set to {{gold}}Rainbow Mode 🌈{{green}}!",
+    "zh-CN": "{{green}}你的便便颜色已设置为 {{gold}}彩虹模式 🌈{{green}}！"
+  },
+  "color.set_rainbow_info": {
+    "en-US": "{{lightblue}}Your poops will now cycle through all colors!",
+    "zh-CN": "{{lightblue}}你的便便现在会循环所有颜色！"
+  },
+  "color.set_random": {
+    "en-US": "{{green}}Your poop color has been set to {{gold}}Random Mode 🎲{{green}}!",
+    "zh-CN": "{{green}}你的便便颜色已设置为 {{gold}}随机模式 🎲{{green}}！"
+  },
+  "color.set_random_info": {
+    "en-US": "{{lightblue}}Each poop will be a random color!",
+    "zh-CN": "{{lightblue}}每坨便便都会是随机颜色！"
+  },
+  "color.set_normal": {
+    "en-US": "{{green}}Your poop color has been set to {0}{{green}}!",
+    "zh-CN": "{{green}}你的便便颜色已设置为 {0}{{green}}！"
+  },
+  "color.menu_title": {
+    "en-US": "Poop Color Selection",
+    "zh-CN": "便便颜色选择"
+  },
+  "color.brown_default": {
+    "en-US": "Brown (Default)",
+    "zh-CN": "棕色（默认）"
+  },
+  "color.white": {
+    "en-US": "White",
+    "zh-CN": "白色"
+  },
+  "color.black": {
+    "en-US": "Black",
+    "zh-CN": "黑色"
+  },
+  "color.red": {
+    "en-US": "Red",
+    "zh-CN": "红色"
+  },
+  "color.green": {
+    "en-US": "Green",
+    "zh-CN": "绿色"
+  },
+  "color.blue": {
+    "en-US": "Blue",
+    "zh-CN": "蓝色"
+  },
+  "color.yellow": {
+    "en-US": "Yellow",
+    "zh-CN": "黄色"
+  },
+  "color.purple": {
+    "en-US": "Purple",
+    "zh-CN": "紫色"
+  },
+  "color.orange": {
+    "en-US": "Orange",
+    "zh-CN": "橙色"
+  },
+  "color.pink": {
+    "en-US": "Pink",
+    "zh-CN": "粉色"
+  },
+  "color.cyan": {
+    "en-US": "Cyan",
+    "zh-CN": "青色"
+  },
+  "color.gold": {
+    "en-US": "Gold",
+    "zh-CN": "金色"
+  },
+  "color.lime": {
+    "en-US": "Lime",
+    "zh-CN": "青柠色"
+  },
+  "color.magenta": {
+    "en-US": "Magenta",
+    "zh-CN": "洋红色"
+  },
+  "color.silver": {
+    "en-US": "Silver",
+    "zh-CN": "银色"
+  },
+  "color.rainbow": {
+    "en-US": "Rainbow 🌈",
+    "zh-CN": "彩虹 🌈"
+  },
+  "color.random": {
+    "en-US": "Random 🎲",
+    "zh-CN": "随机 🎲"
+  },
+  "size.legendary": {
+    "en-US": "{{purple}}LEGENDARY{{default}}",
+    "zh-CN": "{{purple}}传说{{default}}"
+  },
+  "size.desc_massive": {
+    "en-US": "{{darkred}}MASSIVE{{default}}",
+    "zh-CN": "{{darkred}}超级大{{default}}"
+  },
+  "size.desc_huge": {
+    "en-US": "{{orange}}huge{{default}}",
+    "zh-CN": "{{orange}}巨大{{default}}"
+  },
+  "size.desc_large": {
+    "en-US": "{{green}}large{{default}}",
+    "zh-CN": "{{green}}大{{default}}"
+  },
+  "size.desc_above_average": {
+    "en-US": "{{lime}}above average{{default}}",
+    "zh-CN": "{{lime}}较大{{default}}"
+  },
+  "size.desc_normal": {
+    "en-US": "normal",
+    "zh-CN": "正常"
+  },
+  "size.desc_small": {
+    "en-US": "{{lightblue}}small{{default}}",
+    "zh-CN": "{{lightblue}}小{{default}}"
+  },
+  "size.desc_tiny": {
+    "en-US": "{{blue}}tiny{{default}}",
+    "zh-CN": "{{blue}}微小{{default}}"
+  },
+  "size.desc_microscopic": {
+    "en-US": "{{grey}}microscopic{{default}}",
+    "zh-CN": "{{grey}}极小{{default}}"
+  }
+}

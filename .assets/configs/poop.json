@@ -1,0 +1,101 @@
+{
+  "assets": {
+    "poopModel": "models/yappershq/fun/poop.vmdl",
+    "soundEventsFile": "soundevents/soundevents_general.vsndevts"
+  },
+  "size": {
+    "minPoopSize": 0.3,
+    "maxPoopSize": 2.6,
+    "defaultPoopSize": 1.0,
+    "massiveAnnouncementThreshold": 2.0,
+    "generationTiers": [
+      { "chance": 40, "name": "Normal",        "minMultiplier": 0.9, "maxMultiplier": 1.1 },
+      { "chance": 25, "name": "Above Average", "minMultiplier": 1.1, "maxMultiplier": 1.4 },
+      { "chance": 15, "name": "Small",         "minMultiplier": 0.7, "maxMultiplier": 0.9 },
+      { "chance": 10, "name": "Large",         "minMultiplier": 1.4, "maxMultiplier": 1.7 },
+      { "chance": 5,  "name": "Tiny",          "minMultiplier": 0.5, "maxMultiplier": 0.7 },
+      { "chance": 3,  "name": "Huge",          "minMultiplier": 1.7, "maxMultiplier": 2.0 },
+      {
+        "chance": 2, "name": "Rare", "minMultiplier": 2.0, "maxMultiplier": 2.6,
+        "subTiers": [
+          { "weight": 80, "name": "Massive",         "minRangePercent": 0.0,   "maxRangePercent": 0.833 },
+          { "weight": 19, "name": "Legendary",       "minRangePercent": 0.833, "maxRangePercent": 1.0 },
+          { "weight": 1,  "name": "Ultra Legendary", "minRangePercent": 0.98,  "maxRangePercent": 0.999 }
+        ]
+      }
+    ],
+    "sizeCategories": [
+      { "threshold": 2.5, "localeKey": "size.legendary" },
+      { "threshold": 2.0, "localeKey": "size.desc_massive" },
+      { "threshold": 1.7, "localeKey": "size.desc_huge" },
+      { "threshold": 1.4, "localeKey": "size.desc_large" },
+      { "threshold": 1.1, "localeKey": "size.desc_above_average" },
+      { "threshold": 0.9, "localeKey": "size.desc_normal" },
+      { "threshold": 0.7, "localeKey": "size.desc_small" },
+      { "threshold": 0.5, "localeKey": "size.desc_tiny" },
+      { "threshold": 0.0, "localeKey": "size.desc_microscopic" }
+    ]
+  },
+  "color": {
+    "enableRainbowPoops": true,
+    "rainbowAnimationSpeed": 2.0,
+    "defaultPoopColor": "139,69,19",
+    "enableColorPreferences": true,
+    "availableColors": [
+      { "localeKey": "color.brown_default", "red": 139, "green": 69,  "blue": 19 },
+      { "localeKey": "color.white",         "red": 255, "green": 255, "blue": 255 },
+      { "localeKey": "color.black",         "red": 0,   "green": 0,   "blue": 0 },
+      { "localeKey": "color.red",           "red": 255, "green": 0,   "blue": 0 },
+      { "localeKey": "color.green",         "red": 0,   "green": 255, "blue": 0 },
+      { "localeKey": "color.blue",          "red": 0,   "green": 0,   "blue": 255 },
+      { "localeKey": "color.yellow",        "red": 255, "green": 255, "blue": 0 },
+      { "localeKey": "color.purple",        "red": 128, "green": 0,   "blue": 128 },
+      { "localeKey": "color.orange",        "red": 255, "green": 165, "blue": 0 },
+      { "localeKey": "color.pink",          "red": 255, "green": 105, "blue": 180 },
+      { "localeKey": "color.cyan",          "red": 0,   "green": 255, "blue": 255 },
+      { "localeKey": "color.gold",          "red": 255, "green": 215, "blue": 0 },
+      { "localeKey": "color.lime",          "red": 0,   "green": 255, "blue": 0 },
+      { "localeKey": "color.magenta",       "red": 255, "green": 0,   "blue": 255 },
+      { "localeKey": "color.silver",        "red": 192, "green": 192, "blue": 192 },
+      { "localeKey": "color.rainbow",       "red": 255, "green": 0,   "blue": 0, "isRainbow": true },
+      { "localeKey": "color.random",        "red": 0,   "green": 0,   "blue": 0, "isRandom": true }
+    ]
+  },
+  "sound": {
+    "enableSounds": true,
+    "soundVolume": 0.5,
+    "enableTauntSounds": true,
+    "poopSounds": [
+      { "soundEvent": "poop.poop_sound_01" },
+      { "soundEvent": "poop.poop_sound_02" },
+      { "soundEvent": "poop.poop_sound_03", "volume": 0.7 }
+    ],
+    "tauntSounds": [
+      { "soundEvent": "poop.poop_taunt_01" },
+      { "soundEvent": "poop.poop_taunt_02" }
+    ]
+  },
+  "victimDetection": {
+    "maxDeadPlayerDistance": 500.0,
+    "useRagdollVictimDetection": false,
+    "ragdollDetectionDistance": 100.0
+  },
+  "gameplay": {
+    "showMessageOnPoop": true,
+    "maxPoopsPerRound": 0,
+    "removePoopsOnRoundEnd": false,
+    "poopLifetimeSeconds": 0
+  },
+  "commands": {
+    "topRecordsLimit": 10,
+    "commandCooldownSeconds": 3,
+    "poop":       { "enabled": true, "aliases": [ "poop", "shit" ], "cooldownSeconds": 3 },
+    "color":      { "enabled": true, "aliases": [ "poopcolor", "poop_color", "colorpoop" ], "cooldownSeconds": 2 },
+    "topPoopers": { "enabled": true, "aliases": [ "toppoopers", "pooperstop" ], "cooldownSeconds": 5 },
+    "topVictims": { "enabled": true, "aliases": [ "toppoop", "pooptop" ], "cooldownSeconds": 5 }
+  },
+  "ui": {
+    "chatPrefix": "  {PURPLE}Poop {HEAD}⪢{MUTED}",
+    "debugMode": false
+  }
+}

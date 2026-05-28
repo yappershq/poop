@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Poop.Shared/Poop.Shared.csproj" />
+  <Project Path="Poop.Database.Shared/Poop.Database.Shared.csproj" />
+  <Project Path="Poop.Database/Poop.Database.csproj" />
+  <Project Path="Poop.Core/Poop.Core.csproj" />
+  <Project Path="Poop.Example/Poop.Example.csproj" />
+</Solution>

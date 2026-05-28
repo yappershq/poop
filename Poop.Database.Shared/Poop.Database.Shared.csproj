@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- No package references — ORM-agnostic shared interfaces and attributes -->
+  <PropertyGroup>
+    <AssemblyName>Poop.Database.Shared</AssemblyName>
+    <RootNamespace>Prefix.Poop.Database.Shared</RootNamespace>
+  </PropertyGroup>
+</Project>

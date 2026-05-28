@@ -11,8 +11,8 @@ using Sharp.Shared.Units;
 namespace Prefix.Poop.Shared;
 
 /// <summary>
-/// Public API for the Poop plugin
-/// Allows other plugins to interact with poop functionality
+/// Public API for the Poop plugin. Other plugins resolve this via
+/// <c>GetRequiredSharpModuleInterface&lt;IPoopShared&gt;(IPoopShared.Identity)</c>.
 /// </summary>
 public interface IPoopShared
 {
@@ -21,16 +21,12 @@ public interface IPoopShared
     #region Events
 
     /// <summary>
-    /// Fired when a player executes a poop command (before any validation)
-    /// Use this to block commands based on permissions (e.g., donator-only, admin-only, etc.)
-    /// This fires BEFORE cooldown checks, alive checks, and any other validation
+    /// Fired when a player runs a poop command, BEFORE any validation. Set
+    /// <see cref="PoopCommandEventArgs.Cancel"/> to block (e.g. donator/admin gating).
     /// </summary>
     event Action<PoopCommandEventArgs>? OnPoopCommand;
 
-    /// <summary>
-    /// Fired after a poop has been successfully spawned
-    /// Use this for logging, stats tracking, custom effects, etc.
-    /// </summary>
+    /// <summary>Fired after every poop spawn attempt (success or failure).</summary>
     event Action<PoopSpawnedEventArgs>? OnPoopSpawned;
 
     #endregion
@@ -38,14 +34,10 @@ public interface IPoopShared
     #region Spawn API
 
     /// <summary>
-    /// Spawn a poop at a specific position (with full logic, sounds, messages, and logging)
+    /// Spawn a poop with full logic (sounds, messages, logging). Position is taken from the
+    /// player's pawn and the victim is auto-detected; the <paramref name="position"/> and
+    /// <paramref name="victim"/> arguments are accepted for API compatibility.
     /// </summary>
-    /// <param name="position">World position to spawn the poop</param>
-    /// <param name="size">Size of the poop (-1 for random, or specify between MinPoopSize and MaxPoopSize)</param>
-    /// <param name="color">Color preference for the poop (null for default brown)</param>
-    /// <param name="victimName">Optional victim name for logging</param>
-    /// <param name="playSounds">Whether to play poop sounds</param>
-    /// <returns>Result containing the spawned entity and details</returns>
     SpawnPoopResult SpawnPoop(
         IGameClient? player,
         Vector position,
@@ -55,13 +47,9 @@ public interface IPoopShared
         bool playSounds = true);
 
     /// <summary>
-    /// Spawn a poop on a player's position (forces spawn, bypassing cooldowns and restrictions)
+    /// Force a poop from a player's position (bypasses cooldowns/restrictions). Uses the
+    /// player's saved color preference when <paramref name="color"/> is null.
     /// </summary>
-    /// <param name="playerSteamId">SteamID64 of the player to spawn poop from</param>
-    /// <param name="size">Size of the poop (-1 for random)</param>
-    /// <param name="color">Color preference for the poop (null to use player's preference or default)</param>
-    /// <param name="playSounds">Whether to play poop sounds</param>
-    /// <returns>Result containing the spawned entity and details</returns>
     SpawnPoopResult? ForcePlayerPoop(
         IGameClient? player,
         float size = -1.0f,
@@ -72,49 +60,26 @@ public interface IPoopShared
 
     #region Statistics API
 
-    /// <summary>
-    /// Get statistics for a specific player
-    /// </summary>
-    /// <param name="steamId">Player's SteamID64</param>
-    /// <returns>Player's poop statistics (null if not found)</returns>
+    /// <summary>Statistics for a specific player (null if none).</summary>
     Task<PoopStats?> GetPlayerStatsAsync(SteamID steamId);
 
-    /// <summary>
-    /// Get the top N players who placed the most poops
-    /// </summary>
-    /// <param name="limit">Number of top players to return</param>
-    /// <returns>Array of player stats sorted by poops placed</returns>
+    /// <summary>Top N players who placed the most poops.</summary>
     Task<PoopStats[]> GetTopPoopersAsync(int limit = 10);
 
-    /// <summary>
-    /// Get the top N players who were pooped on the most
-    /// </summary>
-    /// <param name="limit">Number of top players to return</param>
-    /// <returns>Array of player stats sorted by times pooped on</returns>
+    /// <summary>Top N players who were pooped on the most.</summary>
     Task<PoopStats[]> GetTopVictimsAsync(int limit = 10);
 
-    /// <summary>
-    /// Get the total number of poops spawned on the server (all time)
-    /// </summary>
-    /// <returns>Total poop count</returns>
+    /// <summary>Total poops spawned on the server (all time).</summary>
     Task<int> GetTotalPoopsCountAsync();
 
     #endregion
 
     #region Player Color Preferences
 
-    /// <summary>
-    /// Get a player's preferred poop color
-    /// </summary>
-    /// <param name="steamId">Player's SteamID64</param>
-    /// <returns>Player's color preference (null if not set)</returns>
+    /// <summary>Get a player's preferred poop color (null if unset).</summary>
     Task<PoopColorPreference?> GetPlayerColorPreferenceAsync(SteamID steamId);
 
-    /// <summary>
-    /// Set a player's poop color preference
-    /// </summary>
-    /// <param name="steamId">Player's SteamID64</param>
-    /// <param name="color">New color preference</param>
+    /// <summary>Set a player's poop color preference.</summary>
     Task SetPlayerColorPreferenceAsync(SteamID steamId, PoopColorPreference color);
 
     #endregion

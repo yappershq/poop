@@ -3,7 +3,7 @@ using System;
 namespace Prefix.Poop.Shared.Models;
 
 /// <summary>
-/// Represents a player's poop color preference
+/// Represents a player's poop color preference.
 /// </summary>
 public sealed class PoopColorPreference
 {
