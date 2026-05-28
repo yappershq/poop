@@ -368,7 +368,7 @@ Temporary Items
 .build/modules
 .build/configs
 .build/locales
-.build/content
+.build/assets
 /PoopCSSharp
 /CounterStrikeSharp-main
 /Stubs
