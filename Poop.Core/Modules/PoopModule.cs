@@ -146,7 +146,7 @@ internal sealed class PoopModule : IModule, IGameListener
             return ECommandAction.Handled;
 
         var pawn = controller.GetPlayerPawn();
-        if (pawn is null || !pawn.IsValid())
+        if (pawn is null || !pawn.IsValid() || !pawn.IsAlive)
         {
             _locale.PrintToClient(controller, "poop.must_be_alive");
             return ECommandAction.Handled;
