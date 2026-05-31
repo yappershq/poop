@@ -89,6 +89,7 @@
   "commands": {
     "topRecordsLimit": 10,
     "commandCooldownSeconds": 3,
+    "vipOnly": true,
     "poop":       { "enabled": true, "aliases": [ "poop", "shit" ], "cooldownSeconds": 3 },
     "color":      { "enabled": true, "aliases": [ "poopcolor", "poop_color", "colorpoop" ], "cooldownSeconds": 2 },
     "topPoopers": { "enabled": true, "aliases": [ "toppoopers", "pooperstop" ], "cooldownSeconds": 5 },

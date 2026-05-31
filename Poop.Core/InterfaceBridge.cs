@@ -9,6 +9,7 @@ using Sharp.Shared;
 using Sharp.Shared.Abstractions;
 using Sharp.Shared.Managers;
 using Sharp.Shared.Objects;
+using Vip.Shared;
 
 namespace Prefix.Poop;
 
@@ -101,6 +102,10 @@ internal sealed class InterfaceBridge
     private bool                _clientPreferenceResolved;
     private bool                _menuManagerResolved;
     private bool                _databaseProviderResolved;
+    private bool                _vipSharedResolved;
+
+    /// <summary>VIP gate — null when the VIP plugin is not deployed (gate stays open).</summary>
+    public IVipShared? VipShared { get; private set; }
 
     /// <summary>Resolve the generic database provider (optional — stats degrade if absent).</summary>
     public IDatabaseProvider? GetDatabaseProvider()
@@ -162,5 +167,18 @@ internal sealed class InterfaceBridge
 
         _menuManagerResolved = true;
         return _cachedMenuManager;
+    }
+
+    /// <summary>Resolve IVipShared (optional — VIP gate stays open when absent).</summary>
+    public void ResolveVipShared()
+    {
+        if (_vipSharedResolved)
+            return;
+
+        var iface = SharpModule.GetOptionalSharpModuleInterface<IVipShared>(IVipShared.Identity);
+        if (iface is { IsAvailable: true, Instance: { } instance })
+            VipShared = instance;
+
+        _vipSharedResolved = true;
     }
 }

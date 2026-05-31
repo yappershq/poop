@@ -225,6 +225,7 @@ internal sealed class CommandsConfig
 {
     [JsonPropertyName("topRecordsLimit")]        public int TopRecordsLimit { get; set; } = 10;
     [JsonPropertyName("commandCooldownSeconds")] public int CommandCooldownSeconds { get; set; } = 3;
+    [JsonPropertyName("vipOnly")]                public bool VipOnly { get; set; } = true;
 
     [JsonPropertyName("poop")]       public CommandConfig Poop { get; set; } = new() { Aliases = ["poop", "shit"], CooldownSeconds = 3 };
     [JsonPropertyName("color")]      public CommandConfig Color { get; set; } = new() { Aliases = ["poopcolor", "poop_color", "colorpoop"], CooldownSeconds = 2 };

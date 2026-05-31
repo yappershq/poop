@@ -38,6 +38,7 @@ internal static class DependencyInjections
         AddModule<RainbowController>(services);
         AddModule<PoopSpawner>(services);
         AddModule<SharedInterfaceModule>(services);
+        AddModule<VipGateModule>(services);
         AddModule<PoopModule>(services);
 
         return services;

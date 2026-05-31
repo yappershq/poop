@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="$(PoopRoot)Poop.Shared\Poop.Shared.csproj" Private="false" />
     <ProjectReference Include="$(PoopRoot)Poop.Database.Shared\Poop.Database.Shared.csproj" Private="false" />
+    <ProjectReference Include="/home/claude/cs2-vip/Vip.Shared/Vip.Shared.csproj" Private="false" />
   </ItemGroup>
 
 </Project>

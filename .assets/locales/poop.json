@@ -7,6 +7,9 @@
     "en-US": "You must be alive to use this command.",
     "zh-CN": "你必须活着才能使用此命令。"
   },
+  "poop.vip_only": {
+    "en-US": " {{red}}[Poop]{{default}} This feature is for VIPs only."
+  },
   "poop.must_be_on_ground": {
     "en-US": "{{red}}You must be on the ground to spawn poop!",
     "zh-CN": "{{red}}你必须站在地面上才能拉便便！"
